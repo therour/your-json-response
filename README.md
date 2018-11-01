@@ -76,5 +76,5 @@ return response()->created($product);
         "price": 6000,
         "weight": 500
     }
-}```
-
+}
+```
