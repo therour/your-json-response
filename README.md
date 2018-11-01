@@ -22,13 +22,18 @@ the configuration file is located at your laravel's config directory by name `yj
 
 ## USAGE
 
+this package is bundled with named skeleton `ok`, you can edit the skeleton in config `yjresponse.php`
 ```php
-    return response()->ok($data, $message = 'success', $code = 200);
+return response()->ok($data, $message = 'success', $code = 200);
+// or
+return response()->yourNamedSkeleton($data, $message = 'success', $code = 200);
 ```
 
 ### CREATING SKELETON
 open configuration file `yjresponse.php`
-create your skeleton with
+
+use `code`, `message`, `data`, `type`, and `meta_page` as value of skeleton to place it
+
 EG: 
 ```php
 
@@ -57,15 +62,19 @@ at the same file, also define the default value
 
 Use your custom skeleton
 ```php
-return response()->created();
+return response()->created($product);
 ```
 *result*
 ```json
 {
-    status: {
-        code: 201,
-        message: "Succesfully create the object"
+    "status": {
+        "code": 201,
+        "message": "Succesfully create the object"
+    },
+    "result": {
+        "name": "Product X",
+        "price": 6000,
+        "weight": 500
     }
-}
-```
+}```
 
