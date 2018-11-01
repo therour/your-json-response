@@ -71,7 +71,7 @@ class YJResponse implements Responsable
 
         $json = $this->getValue($this->skeleton);
         
-        if (is_null($this->pagination_meta)) {
+        if (is_null($this->meta_page)) {
             return array_except($json, ['meta_page']);
         }
 

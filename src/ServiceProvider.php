@@ -40,12 +40,12 @@ class ServiceProvider extends BaseServiceProvider
         $defaults = config('yjresponse.defaults');
 
         foreach ($skeletons as $name => $skeleton) {
-            Response::macro($name, function ($data, $message = null, $code = null) use ($name, $defaults) {
+            Response::macro($name, function ($data = '', $message = null, $code = null) use ($name, $defaults) {
                 if (is_null($message)) {
-                    return new YJResponse($data, $defaults[$name]['message'], $defaults[$name]['code']);
+                    return new YJResponse($data, $defaults[$name]['message'], $defaults[$name]['code'], $name);
                 }
                 if (is_null($code)) {
-                    return new YJResponse($data, $message, $defaults[$name]['code']);
+                    return new YJResponse($data, $message, $defaults[$name]['code'], $name);
                 }
 
                 return new YJResponse($data, $message, $code, $name);
