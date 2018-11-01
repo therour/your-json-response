@@ -1,0 +1,29 @@
+{
+    "name": "therour/your-json-response",
+    "description": "modifier for json response skeleton",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nizom Sidiq",
+            "email": "nizomsidiq@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Therour\\YourJsonResponse\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Therour\\YourJsonResponse\\ServiceProvider"
+            ]
+        }
+    }
+}
