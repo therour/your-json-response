@@ -46,32 +46,6 @@ class YJResponse implements Responsable
     }
 
     /**
-     * Set message attribute.
-     *
-     * @param string $message
-     * @return Illuminate\Contracts\Support\Responsable
-     */
-    public function message($message)
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    /**
-     * Set code attribute.
-     *
-     * @param int $code
-     * @return void
-     */
-    public function code($code)
-    {
-        $this->code = $code;
-
-        return $this;
-    }
-
-    /**
      * Create an HTTP response that represents the object.
      *
      * @return \Illuminate\Http\Response
